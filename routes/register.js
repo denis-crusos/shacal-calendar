@@ -4,7 +4,7 @@ var router = express.Router();
 
 router.get("/", function(req, res){
 	res.render("register", {title:"Register"});
-	// changed
+	// again
 });
 
 router.post("/",function(req, res){
