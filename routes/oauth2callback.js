@@ -18,7 +18,7 @@ router.get("/", function(req, res) {
 			gapi.client.setCredentials(tokens);
 			google.options({ auth: oauth2Client });
 			goauth2.userinfo.get({ userId: "me"}, function(err, results){
-				console.log("ME = " + JSON.stringify(results));
+				console.log("ME = " + JSON.stringify(results, null, "\t"));
 			});
 
 			plus.people.get({ userId: "me"}, function(err, user){
@@ -26,7 +26,7 @@ router.get("/", function(req, res) {
 			});
 
 			cal.settings.list({userId: "me"}, function(err, rezults){
-				console.log("Call Settings: " + (err ? err.message : JSON.stringify(rezults)));
+				console.log("Call Settings: " + (err ? err.message : JSON.stringify(rezults, null, "\t")));
 			});
 		}
 	});
