@@ -17,7 +17,7 @@ router.get("/", function(req, res) {
 	oauth2Client.getToken(mycode, function(err, tokens){
 		if(!err) {
 			// console.log(tokens);
-			gapi.client.setCredentials(tokens);
+			oauth2Client.setCredentials(tokens);
 			google.options({ auth: oauth2Client });
 
 			var promises = [];
@@ -29,6 +29,7 @@ router.get("/", function(req, res) {
 				res.render("callbackpage.jade", {
 					title: "The Callback page",
 					code: mycode,
+					tok: JSON.stringify(tokens, null, "\t"),
 					first: JSON.stringify(one.value, null, "\t"),
 					second: JSON.stringify(two.value, null, "\t"),
 					third: JSON.stringify(three.value, null, "\t")
