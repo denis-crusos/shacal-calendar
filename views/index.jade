@@ -3,9 +3,12 @@ extends layout
 block content
 	h1= title
 	p Welcome to #{title}
+	p Your code is: #{code}
 	#login_div
-		a(href="/site/login") Login
-	#register_div
-		a(href="/site/register") Register
+		a(href= url) Login
 	div
-		p In a div.
+		a(href="/users/54b54a92ede226a41a78bb03") Login as Denis
+	//- #register_div
+	//- 	a(href="/site/register") Register
+	//- div
+	//- 	p In a div.
