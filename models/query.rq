@@ -3,3 +3,42 @@ PREFIX ab: <http://learningsparql.com/ns/addressbook#>
 SELECT ?craigEmail
 WHERE
 {ab:craig ab:email ?craigEmail . }
+
+// ------------------------------------------------------------
+
+PREFIX users:     <http://localhost:3000/users/>
+PREFIX events:  <http://localhost:3000/events/>
+
+SELECT ?events
+WHERE
+{
+users:Denis users:hasEvent ?events .
+}
+
+// ------------------------------------------------------------
+
+PREFIX users:     <http://localhost:3000/users/>
+PREFIX events:  <http://localhost:3000/events/>
+PREFIX foaf:      <http://xmlns.com/foaf/0.1/>
+
+SELECT ?name
+WHERE
+{
+users:Adi foaf:knows ?who .
+?who foaf:name ?name .
+}
+
+// --------------------------------------------------------------
+
+PREFIX users:     <http://localhost:3000/users/>
+PREFIX events:  <http://localhost:3000/events/>
+PREFIX foaf:      <http://xmlns.com/foaf/0.1/>
+
+SELECT ?p1 ?p2
+WHERE
+{
+?some foaf:knows ?who .
+?some foaf:name ?p1 .
+?who foaf:name ?p2 .
+
+}
