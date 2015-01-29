@@ -1,0 +1,72 @@
+extends layout
+
+block content
+    form.form-horizontal(method="post" action="/eventadder")
+      .form-group
+        label.col-sm-2.control-label(for='inputEmail') Name
+        .col-sm-10
+          input#inputEmail3.form-control(type='text', name="eventname", placeholder='EventName', size='15')
+      .form-group
+        label.col-sm-2.control-label(for='inputLocation') Location
+        .col-sm-10
+          input#inputEmail3.form-control(type='location', name="eventloc", placeholder='Location', size='15')
+      .form-group
+        label.col-sm-2.control-label(for='inputDescription') Description
+        .col-sm-10
+          textarea.form-control(rows='3', type = 'description', name="eventdesc",)
+      .form-group
+        .col-sm-offset-2.col-sm-10
+          .checkbox
+            label.radio-inline
+              input#inlineRadio1(type='radio', name='eventprivacy', value='Public')
+              |  Public
+            label.radio-inline
+              input#inlineRadio2(type='radio', name='eventprivacy', value='Friends')
+              |  Friends
+            label.radio-inline
+              input#inlineRadio3(type='radio', name='eventprivacy', value='Private')
+              |  Private
+      .form-group
+          label.col-sm-2.control-label(for='inputEventType') Event Type
+          .col-sm-10
+            select.form-control(name="eventtype")
+              option Business Event
+              option Childrens Event 
+              option Comedy Event
+              option Dance Event
+              option Delivery Event
+              option Educational Event
+              option Festival
+              option Food Event
+              option Literary Event
+              option Music Event
+              option Publication Event
+              option Sale Event
+              option Social Event
+              option Sports Event
+              option Theater Event
+              option User Interaction
+              option Visual Arts Event
+      .form-group
+          label.col-sm-2.control-label(for='inputStartDate') Start Date
+          .col-sm-10
+            #datetimepicker1.input-group.date
+              input.form-control(type='date', name="eventstart")
+              span.input-group-addon
+                span.glyphicon.glyphicon-calendar
+      .form-group
+          label.col-sm-2.control-label(for='inputEndDate') End Date
+          .col-sm-10
+            #datetimepicker2.input-group.date
+              input.form-control(type='date', name="eventend")
+              span.input-group-addon
+                span.glyphicon.glyphicon-calendar
+      .form-group
+        .col-sm-offset-2.col-sm-10
+          button.btn.btn-default(type='submit') Create event
+script(type='text/javascript').
+      $(function () {
+         $('datetimepicker1').datepicker({ autoclose: true, todayHighlight: true });
+       });
+
+
