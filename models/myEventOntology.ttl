@@ -1,0 +1,46 @@
+@prefix rdf:       <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+@prefix rdfs:      <http://www.w3.org/2000/01/rdf-schema#>
+@prefix schema:     <http://schema.org/>
+@prefix foaf:      <http://xmlns.com/foaf/0.1/>
+@prefix users:     <http://localhost:3000/users/>
+@prefix events:  <http://localhost:3000/events/>
+@prefix owl:       <http://www.w3.org/2002/07/owl#>
+
+users:Denis a foaf:Person ;
+    foaf:name "Denis" ;
+    foaf:mbox <mailto:denis@bomis.com> ;
+    foaf:homepage <http://www.denis.com/> ;
+    foaf:nick "Denis" ;
+    foaf:depiction <http://denis.jpg> ;
+    foaf:interest <http://www.wikimedia.org> ;
+    foaf:knows [
+        a foaf:Person ;
+        foaf:name "Adi"
+    ] .
+
+users:Adi a foaf:Person ;
+    foaf:name "Adi" ;
+    foaf:mbox <mailto:adi@bomis.com> ;
+    foaf:homepage <http://www.adi.com/> ;
+    foaf:nick "Adi" ;
+    foaf:depiction <http://www.adi.jpg> ;
+    foaf:interest <http://www.wikimedia.org> ;
+    foaf:knows [
+        a foaf:Person ;
+        foaf:name "Denis"
+    ] .
+
+users:hasEvent a rdf:Property ;
+               rdfs:domanin foaf:Person ;
+               rdfs:range schema:Event .
+
+events:privacy a rdf:Property ;
+               rdfs:domain schema:Event .
+
+events:Ziua_de_nastere a schema:Event ;
+                       schema:name "Ziua de nastere" ;
+                       schema:description "Ziua de nastere" ;
+                       schema:attendee users:Denis ;
+                       schema:startDate "2015-01-23" .
+
+users:Denis users:hasEvent events:Ziua_de_nastere .

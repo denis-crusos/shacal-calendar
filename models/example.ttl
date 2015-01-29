@@ -1,0 +1,8 @@
+@prefix ab: <http://learningsparql.com/ns/addressbook#>
+
+ab:richard ab:homeTel "656-1234" .
+ab:richard ab:email "richard@hotmail.com" .
+
+ab:craig ab:homeTel "123456" .
+ab:craig ab:email "craig@yahoo.com" .
+ab:craig ab:email "craig@google.com" .

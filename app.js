@@ -13,7 +13,14 @@ var users = require("./routes/users");
 // var api = require("./routes/api");
 // var register = require("./routes/register");
 // var gapi = require("./routes/gapi");
+
+var about = require("./routes/about");
+var event = require("./routes/addEvent");
+var contact = require("./routes/contact");
+
 var oa2back = require("./routes/oauth2callback");
+var rdftest = require("./routes/rdftest");
+var eventadder = require("./routes/eventadder");
 // ----------
 
 var app = express();
@@ -21,6 +28,7 @@ var app = express();
 // view engine setup
 app.set("views", path.join(__dirname, "views"));
 app.set("view engine", "jade");
+
 
 // uncomment after placing your favicon in /public
 //app.use(favicon(__dirname + "/public/favicon.ico"));
@@ -34,6 +42,12 @@ app.use(require("stylus").middleware(path.join(__dirname, "public")));
 app.use("/", routes);
 app.use("/users", users);
 app.use("/oauth2callback", oa2back);
+app.use("/rdftest", rdftest);
+
+app.use("/about", about);
+app.use("/addEvent", event);
+app.use("/contact", contact);
+app.use("/eventadder", eventadder);
 // app.use("/site/register", register);
 
 // ---------------------------------------
