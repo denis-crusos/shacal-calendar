@@ -1,16 +1,15 @@
 extends layout
 
 block content
-	h1= title
-	p Welcome to #{title}
-	p Your code is: #{code}
-	#login_div
-		a(href= url) Login
-	div
-		a(href="/users/54b54a92ede226a41a78bb03") Login as Denis
-	div 
-		a(href="/rdftest") To RdfTest
-	//- #register_div
-	//- 	a(href="/site/register") Register
-	//- div
-	//- 	p In a div.
+  .jumbotron
+    h1 Welcome to Shacal Calendar!!!
+      |   
+      p Acesta este un instrument "inteligent" menit a interoga si valida calendarul de activitati pentru un utilizator sau grup de utilizatori.
+      |   
+      p Poti incepe prin a te loga:
+      |   
+      p
+        a.btn.btn-primary.btn-lg(href=url, role='button') Login
+
+
+

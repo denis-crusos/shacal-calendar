@@ -1,9 +1,22 @@
 extends layout
 
 block content
-	p Welcome #{user}
-	h3 User form DB
-	pre= stuff
 
-	h3 Call using Google API to userinfo
-	pre= userinfo
+	//- img.img-thumbnail(src='https://lh3.googleusercontent.com/-XdUIqdMkCWA/AAAAAAAAAAI/AAAAAAAAAAA/4252rscbv5M/photo.jpg', alt='Alternative', height='200', width='200')
+	//- h2
+	//- 	span.label.label-primary #{user}
+	//- br
+	.row
+		.col-sm-2
+			img.img-thumbnail(src='https://lh3.googleusercontent.com/-XdUIqdMkCWA/AAAAAAAAAAI/AAAAAAAAAAA/4252rscbv5M/photo.jpg', alt='Alternative', height='200', width='200')
+			h2
+				span.label.label-primary #{user}
+			a(href='/addEvent')
+				button.btn.btn-lg.btn-success(type='button') Add event
+		.col-sm-8
+			ul
+				each val in events
+					li 
+						.well 
+							each thing, key in val
+								p= key + ": " + thing 
