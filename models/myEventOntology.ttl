@@ -6,32 +6,32 @@
 @prefix events:  <http://localhost:3000/events/>
 @prefix owl:       <http://www.w3.org/2002/07/owl#>
 
-users:Denis a foaf:Person ;
-    foaf:name "Denis" ;
-    foaf:mbox <mailto:denis@bomis.com> ;
-    foaf:homepage <http://www.denis.com/> ;
-    foaf:nick "Denis" ;
-    foaf:depiction <http://denis.jpg> ;
+users:DorelIoan a foaf:Person ;
+    foaf:name "Dorel" ;
+    foaf:mbox <mailto:Dorel@bomis.com> ;
+    foaf:homepage <http://www.Dorel.com/> ;
+    foaf:nick "DenisDorel" ;
+    foaf:depiction <http://Dorel.jpg> ;
     foaf:interest <http://www.wikimedia.org> ;
     foaf:knows [
         a foaf:Person ;
-        foaf:name "Adi"
+        foaf:name "AdrianBotez"
     ] .
 
-users:Adi a foaf:Person ;
-    foaf:name "Adi" ;
+users:AdrianBotez a foaf:Person ;
+    foaf:name "AdrianBotez" ;
     foaf:mbox <mailto:adi@bomis.com> ;
     foaf:homepage <http://www.adi.com/> ;
-    foaf:nick "Adi" ;
+    foaf:nick "Adrian" ;
     foaf:depiction <http://www.adi.jpg> ;
     foaf:interest <http://www.wikimedia.org> ;
     foaf:knows [
         a foaf:Person ;
-        foaf:name "Denis"
+        foaf:name "Costel"
     ] .
 
 users:hasEvent a rdf:Property ;
-               rdfs:domanin foaf:Person ;
+               rdfs:domain foaf:Person ;
                rdfs:range schema:Event .
 
 events:privacy a rdf:Property ;
@@ -40,7 +40,7 @@ events:privacy a rdf:Property ;
 events:Ziua_de_nastere a schema:Event ;
                        schema:name "Ziua de nastere" ;
                        schema:description "Ziua de nastere" ;
-                       schema:attendee users:Denis ;
+                       schema:attendee users:AdrianBotez ;
                        schema:startDate "2015-01-23" .
 
-users:Denis users:hasEvent events:Ziua_de_nastere .
+users:AdrianBotez users:hasEvent events:Ziua_de_nastere .
